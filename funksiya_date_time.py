@@ -9,3 +9,4 @@ while 1:
   print(" Hozir Sizning yoshingiz  - " , natija , "da")
 else:
     print("Sizga berilgan miqdor tugadi")
+    break
