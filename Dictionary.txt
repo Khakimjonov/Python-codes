@@ -1,0 +1,39 @@
+import os
+import time
+os.system("cls")
+d={"apple":"olma"}
+all_english_words = d.keys()
+all_uzbek_words = d.values()
+while True:
+    print("Tanlang: \n1.English -> Uzbek \n2.Uzbek -> English \n3.Yangi inglizcha so'z qo'shish \n4.Barcha inglizcha so'zlar \n5.Barcha o'zbekcha so'zlar\n6.Chiqish\n")
+    t=int(input(">>> "))
+    if t==1:
+        a=input("Inglizcha so'z kiriting: ")
+        if a in all_english_words:
+            print(d[a])
+            time.sleep(2)
+            os.system("cls")
+        else:
+            print("Hozircha bu so'z mavjud emas!")
+            time.sleep(2)
+            os.system("cls")
+    elif t==3:
+        os.system("cls")
+        e=input("Yangi inglizcha so'zni kiriting: ")
+        u=input("Uning o'zbekcha tarjimasini kiriting: ")
+        d.update({e:u})
+        print("So'z qo'shildi 😜😉")
+        time.sleep(2)
+        os.system("cls")
+    elif t==4:
+        os.system("cls")
+        print(all_english_words)
+        time.sleep(5)
+        os.system("cls")
+    elif t==5:
+        os.system("cls")
+        print(all_uzbek_words)
+        time.sleep(5)
+        os.system("cls")
+    elif t==6:
+        break
