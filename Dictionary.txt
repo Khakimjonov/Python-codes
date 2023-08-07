@@ -1,39 +1,76 @@
 import os
 import time
-os.system("cls")
-d={"apple":"olma"}
-all_english_words = d.keys()
-all_uzbek_words = d.values()
-while True:
-    print("Tanlang: \n1.English -> Uzbek \n2.Uzbek -> English \n3.Yangi inglizcha so'z qo'shish \n4.Barcha inglizcha so'zlar \n5.Barcha o'zbekcha so'zlar\n6.Chiqish\n")
-    t=int(input(">>> "))
-    if t==1:
-        a=input("Inglizcha so'z kiriting: ")
-        if a in all_english_words:
-            print(d[a])
-            time.sleep(2)
-            os.system("cls")
-        else:
-            print("Hozircha bu so'z mavjud emas!")
-            time.sleep(2)
-            os.system("cls")
-    elif t==3:
-        os.system("cls")
-        e=input("Yangi inglizcha so'zni kiriting: ")
-        u=input("Uning o'zbekcha tarjimasini kiriting: ")
-        d.update({e:u})
-        print("So'z qo'shildi 😜😉")
+
+d1={"apple":"olma"}
+d2={"olma":"apple"}
+login = {"admin":"12345"}
+all_logins = login.keys()
+all_passwords = login.values()
+all_english_words = d1.keys()
+all_uzbek_words = d1.values()
+
+while 1:
+    os.system("cls")
+    l=input("Login: ")
+    p=input("Password: ")
+    if l in all_logins:
+        for i in range(len(list(all_logins))):
+            if list(all_logins)[i] == l and list(all_passwords)[i] == p:
+                while True:
+                    os.system("cls")
+                    print("Tanlang: \n1.English -> Uzbek \n2.Uzbek -> English \n3.Barcha inglizcha so'zlar \n4.Barcha o'zbekcha so'zlar \n5.Yangi so'z qo'shish \n6.Ro'yxatdan o'tish \n7.Chiqish\n")
+                    t=int(input(">>> "))
+                    
+                    if t==1:
+                        os.system("cls")
+                        a=input("Inglizcha so'z kiriting: ")
+                        
+                        if a in all_english_words:
+                            print(d1[a])
+                            time.sleep(2)
+                        else:
+                            print("Hozircha bunday so'z yo'q 🤪")
+                            time.sleep(2)
+                            
+                            
+                    elif t==2:
+                        os.system("cls")
+                        a=input("O'zbekcha so'z kiriting: ")
+                        
+                        if a in all_uzbek_words:
+                            print(d2[a])
+                            time.sleep(2)
+                        else:
+                            print("Hozircha bunday so'z yo'q 🤪")
+                            time.sleep(2)
+                            
+                            
+                    elif t==3:
+                        os.system("cls")
+                        print("Barcha inglizcha so'zlar: ",list(all_english_words))
+                        time.sleep(3)
+                        
+                        
+                    elif t==4:
+                        os.system("cls")
+                        print("Barcha o'zbekcha so'zlar: ",list(all_uzbek_words))
+                        time.sleep(3)
+                        
+                        
+                    elif t==5:
+                        os.system("cls")
+                        e=input("Inglizcha so'z kiritng: ")
+                        u=input("Uning tarjimasini kiriting: ")
+                        d1.update({e:u})
+                        d2.update({u:e})
+                        print("So'z qo'shildi 🥳🥳")
+                        time.sleep(2)
+                        
+                        
+                    elif t==6:
+                        os.system("cls")
+                        log=input("Loginni kiriting: ")
+                        pas=input("E")
+    else:
+        print("Login yoki parol xato!")
         time.sleep(2)
-        os.system("cls")
-    elif t==4:
-        os.system("cls")
-        print(all_english_words)
-        time.sleep(5)
-        os.system("cls")
-    elif t==5:
-        os.system("cls")
-        print(all_uzbek_words)
-        time.sleep(5)
-        os.system("cls")
-    elif t==6:
-        break
